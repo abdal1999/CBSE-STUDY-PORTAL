@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Class 10 - CBSE Resources</title>
+  <link rel="stylesheet" href="style.css"/>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f6f8;
+    }
+
+    header {
+      background-color: #004080;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    nav {
+      margin-top: 10px;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 12px;
+      text-decoration: none;
+      font-weight: 500;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    main {
+      padding: 40px 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .subject-container {
+      display: flex;
+      gap: 30px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .subject {
+      flex: 1 1 45%;
+      background-color: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+      transition: transform 0.2s;
+    }
+
+    .subject:hover {
+      transform: translateY(-5px);
+    }
+
+    .subject h2 {
+      border-bottom: 2px solid #004080;
+      padding-bottom: 8px;
+      margin-bottom: 16px;
+      color: #004080;
+    }
+
+    .subject ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .subject li {
+      margin-bottom: 10px;
+      cursor: pointer;
+      color: #0077cc;
+    }
+
+    .subject li:hover {
+      text-decoration: underline;
+    }
+
+    #pdfSection {
+      margin-top: 50px;
+      background-color: white;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    }
+
+    #pdfTitle {
+      color: #004080;
+      margin-bottom: 20px;
+      font-size: 1.2em;
+    }
+
+    #pdfList li {
+      margin-bottom: 10px;
+    }
+
+    #pdfList a {
+      color: #333;
+      text-decoration: none;
+    }
+
+    #pdfList a:hover {
+      text-decoration: underline;
+      color: #0077cc;
+    }
+
+    footer {
+      text-align: center;
+      background-color: #004080;
+      color: white;
+      padding: 15px;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>CBSE Study Portal</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="class9.html">Class 9</a>
+      <a href="class10.html">Class 10</a>
+      <a href="#">Class 11</a>
+      <a href="#">Class 12</a>
+      <a href="#">Donate</a>
+    </nav>
+  </header>
+
+  <main>
+    <h2 style="text-align:center; color:#004080;">Class 10 Resources</h2>
+
+    <div class="subject-container">
+      <section class="subject" id="maths">
+        <h2>Mathematics</h2>
+        <ul>
+          <li onclick="showPDFList('maths', 'notes')">Notes</li>
+          <li onclick="showPDFList('maths', 'assignments')">Assignments</li>
+          <li onclick="showPDFList('maths', 'samplepapers')">Sample Papers</li>
+          <li onclick="showPDFList('maths', 'previous')">Previous Year Questions</li>
+        </ul>
+      </section>
+
+      <section class="subject" id="science">
+        <h2>Science</h2>
+        <ul>
+          <li onclick="showPDFList('science', 'notes')">Notes</li>
+          <li onclick="showPDFList('science', 'assignments')">Assignments</li>
+          <li onclick="showPDFList('science', 'samplepapers')">Sample Papers</li>
+          <li onclick="showPDFList('science', 'previous')">Previous Year Questions</li>
+        </ul>
+      </section>
+    </div>
+
+    <section id="pdfSection">
+      <h3 id="pdfTitle"></h3>
+      <ul id="pdfList"></ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 CBSE Study Portal. All rights reserved.</p>
+  </footer>
+
+  <script>
+    const pdfData = {
+      maths: {
+        notes: [
+          { name: "Real Numbers", url: "pdfs/class10/maths/notes/ch1.pdf" },
+          { name: "Polynomials", url: "pdfs/class10/maths/notes/ch2.pdf" }
+        ],
+        assignments: [
+          { name: "Assignment 1", url: "pdfs/class10/maths/assignments/assign1.pdf" }
+        ],
+        samplepapers: [
+          { name: "Sample Paper 2023", url: "pdfs/class10/maths/sample/sample2023.pdf" }
+        ],
+        previous: [
+          { name: "Previous Year 2022", url: "pdfs/class10/maths/previous/prev2022.pdf" }
+        ]
+      },
+      science: {
+        notes: [
+          { name: "Chemical Reactions and Equations", url: "pdfs/class10/science/notes/ch1.pdf" }
+        ],
+        assignments: [
+          { name: "Assignment 1", url: "pdfs/class10/science/assignments/assign1.pdf" }
+        ],
+        samplepapers: [
+          { name: "Sample Paper 2023", url: "pdfs/class10/science/sample/sample2023.pdf" }
+        ],
+        previous: [
+          { name: "Previous Year 2022", url: "pdfs/class10/science/previous/prev2022.pdf" }
+        ]
+      }
+    };
+
+    function showPDFList(subject, type) {
+      const list = pdfData[subject][type];
+      const listEl = document.getElementById('pdfList');
+      const title = document.getElementById('pdfTitle');
+
+      listEl.innerHTML = '';
+      title.textContent = `${capitalize(subject)} - ${formatType(type)}`;
+
+      list.forEach(pdf => {
+        const li = document.createElement('li');
+        const link = document.createElement('a');
+        link.href = pdf.url;
+        link.textContent = pdf.name;
+        link.target = "_blank";
+        link.rel = "noopener noreferrer";
+
+        li.appendChild(link);
+        listEl.appendChild(li);
+      });
+    }
+
+    function capitalize(text) {
+      return text.charAt(0).toUpperCase() + text.slice(1);
+    }
+
+    function formatType(type) {
+      switch(type) {
+        case 'notes': return 'Notes';
+        case 'assignments': return 'Assignments';
+        case 'samplepapers': return 'Sample Papers';
+        case 'previous': return 'Previous Year Questions';
+      }
+    }
+  </script>
+</body>
+</html>
