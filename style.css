@@ -29,6 +29,19 @@ header.scrolled {
   background-color: #003060;
   box-shadow: 0 3px 8px rgba(0,0,0,0.2);
 }
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px;
+}
+
+@media (max-width: 768px) {
+  .header-content h1 {
+    font-size: 1.5rem;
+    margin: 0;
+  }
+}
 
 nav {
   margin-top: 10px;
@@ -227,7 +240,12 @@ p {
     position: relative;
     padding: 15px 20px;
   }
-  
+   header h1 {
+    font-size: 1.4rem;
+    margin: 0;
+    padding: 10px;
+    text-align: left;
+  }
   #nav-toggle {
     display: block;
   }
