@@ -6,119 +6,145 @@
   <title>Class 9 - CBSE Resources</title>
   <link rel="stylesheet" href="style.css"/>
   <style>
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f4f6f8;
-    }
+  body {
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f6f8;
+  }
 
-    header {
-      background-color: #004080;
-      color: white;
-      padding: 20px;
-      text-align: center;
-    }
+  header {
+    background-color: #004080;
+    color: white;
+    padding: 20px;
+    text-align: center;
+  }
 
-    nav {
-      margin-top: 10px;
+  nav {
+    margin-top: 10px;
+  }
+
+  nav a {
+    color: white;
+    margin: 0 10px;
+    text-decoration: none;
+    font-weight: 500;
+  }
+
+  nav a:hover {
+    text-decoration: underline;
+  }
+
+  main {
+    padding: 30px 20px;
+    max-width: 1200px;
+    margin: auto;
+  }
+
+  h2 {
+    text-align: center;
+    color: #004080;
+    margin-bottom: 30px;
+  }
+
+  .subject-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+  }
+
+  .subject {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    transition: transform 0.2s;
+  }
+
+  .subject:hover {
+    transform: translateY(-5px);
+  }
+
+  .subject h2 {
+    border-bottom: 2px solid #004080;
+    padding-bottom: 8px;
+    margin-bottom: 16px;
+    font-size: 1.2rem;
+  }
+
+  .subject ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .subject li {
+    margin-bottom: 10px;
+    cursor: pointer;
+    color: #0077cc;
+    font-weight: 500;
+  }
+
+  .subject li:hover {
+    text-decoration: underline;
+  }
+
+  #pdfSection {
+    margin-top: 40px;
+    background-color: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  }
+
+  #pdfTitle {
+    color: #004080;
+    font-size: 1.2em;
+    margin-bottom: 20px;
+  }
+
+  #pdfList li {
+    margin-bottom: 10px;
+  }
+
+  #pdfList a {
+    color: #333;
+    text-decoration: none;
+  }
+
+  #pdfList a:hover {
+    color: #0077cc;
+    text-decoration: underline;
+  }
+
+  footer {
+    text-align: center;
+    background-color: #004080;
+    color: white;
+    padding: 15px;
+    margin-top: 40px;
+  }
+
+  @media (max-width: 600px) {
+    header h1 {
+      font-size: 1.5rem;
     }
 
     nav a {
-      color: white;
-      margin: 0 12px;
-      text-decoration: none;
-      font-weight: 500;
-    }
-
-    nav a:hover {
-      text-decoration: underline;
-    }
-
-    main {
-      padding: 40px 20px;
-      max-width: 1200px;
-      margin: auto;
-    }
-
-    .subject-container {
-      display: flex;
-      gap: 30px;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-
-    .subject {
-      flex: 1 1 45%;
-      background-color: white;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-      transition: transform 0.2s;
-    }
-
-    .subject:hover {
-      transform: translateY(-5px);
+      display: inline-block;
+      margin: 6px 5px;
+      font-size: 0.9rem;
     }
 
     .subject h2 {
-      border-bottom: 2px solid #004080;
-      padding-bottom: 8px;
-      margin-bottom: 16px;
-      color: #004080;
-    }
-
-    .subject ul {
-      list-style: none;
-      padding: 0;
-    }
-
-    .subject li {
-      margin-bottom: 10px;
-      cursor: pointer;
-      color: #0077cc;
-    }
-
-    .subject li:hover {
-      text-decoration: underline;
-    }
-
-    #pdfSection {
-      margin-top: 50px;
-      background-color: white;
-      padding: 25px;
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+      font-size: 1rem;
     }
 
     #pdfTitle {
-      color: #004080;
-      margin-bottom: 20px;
-      font-size: 1.2em;
+      font-size: 1rem;
     }
+  }
+</style>
 
-    #pdfList li {
-      margin-bottom: 10px;
-    }
-
-    #pdfList a {
-      color: #333;
-      text-decoration: none;
-    }
-
-    #pdfList a:hover {
-      text-decoration: underline;
-      color: #0077cc;
-    }
-
-    footer {
-      text-align: center;
-      background-color: #004080;
-      color: white;
-      padding: 15px;
-      margin-top: 40px;
-    }
-  </style>
 </head>
 <body>
   <header>

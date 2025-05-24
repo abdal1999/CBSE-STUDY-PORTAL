@@ -29,3 +29,33 @@ startAutoScroll();
 // Pause on hover
 carousel.addEventListener('mouseenter', stopAutoScroll);
 carousel.addEventListener('mouseleave', startAutoScroll);
+
+document.querySelectorAll('nav a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function(e) {
+    e.preventDefault();
+    const target = document.querySelector(this.getAttribute('href'));
+    if(target) {
+      target.scrollIntoView({ behavior: 'smooth' });
+    }
+  });
+});
+const backToTopBtn = document.getElementById('back-to-top');
+
+window.addEventListener('scroll', () => {
+  if(window.scrollY > 300) {
+    backToTopBtn.style.display = 'block';
+  } else {
+    backToTopBtn.style.display = 'none';
+  }
+});
+
+backToTopBtn.addEventListener('click', () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+window.addEventListener('scroll', () => {
+  if(window.scrollY > 300) {
+    backToTopBtn.classList.add('show');
+  } else {
+    backToTopBtn.classList.remove('show');
+  }
+});
